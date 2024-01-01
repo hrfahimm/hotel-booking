@@ -7,8 +7,10 @@ export default defineConfig({
     name: "default",
     title: "hotel-booking",
 
-    projectId: "l1g6wg9p",
-    dataset: "production",
+    projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
+    dataset: process.env.NEXT_PUBLIC_DATASET as string,
+
+    basePath: "/studio",
 
     plugins: [deskTool(), visionTool()],
 
