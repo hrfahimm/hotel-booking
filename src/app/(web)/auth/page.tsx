@@ -1,7 +1,11 @@
 'use client'
+import { signUp } from "next-auth-sanity/client";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { signIn, useSession } from 'next-auth/react';
+import toast from "react-hot-toast";
+import { IoArrowRedo } from "react-icons/io5";
 
 const defaultFormData = {
     email: '',
@@ -18,17 +22,30 @@ export default function Auth() {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value })
     };
+
+    const { data: session } = useSession();
+    console.log(session);
+    const loginHandler = async () => {
+        try {
+            await signIn();
+            //push the user to home page
+        } catch (error) {
+            console.log(error);
+            toast.error('something went wrong')
+
+        }
+    }
+
+
+
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            console.log(formData);
-
-        } catch (error) {
-            console.log(error);
-
-        } finally {
-            setFormData(defaultFormData)
+            const user = await signUp(formData)
+            if (user) { toast.success("Success. Please Sign in") }
         }
+        catch (error) { toast.error("Something went wrong") }
+        finally { setFormData(defaultFormData) }
     }
 
     return <section className="container mx-auto ">
@@ -39,9 +56,9 @@ export default function Auth() {
                 </h1>
                 <p className="text-lg">  or</p>
                 <span className="inline-flex items-center">
-                    <AiFillGithub className="mr-3 text-4xl cursor-pointer text-black dark:text-white" />
+                    <AiFillGithub onClick={loginHandler} className="mr-3 text-4xl cursor-pointer text-black dark:text-white" />
                     <span>|</span>
-                    <FcGoogle className=" ml-3 text-4xl cursor-pointer" />
+                    <FcGoogle onClick={loginHandler} className=" ml-3 text-4xl cursor-pointer" />
                 </span>
             </div>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
@@ -54,7 +71,7 @@ export default function Auth() {
 
                 <button type="submit" className="w-full bg-tertiary-dark focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center " >SignUp</button>
 
-                <button className="text-cyan-500 underline font-semibold  text-lg">LogIn</button>
+                <button onClick={loginHandler} className=" underline font-semibold flex  gap-2 text-lg"> <span>LogIn</span> <IoArrowRedo className="justify-center items-center text-lg" /></button>
             </form>
         </div>
     </section>;

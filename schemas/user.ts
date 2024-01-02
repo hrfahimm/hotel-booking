@@ -18,7 +18,7 @@ const user = {
         }),
         defineField({
             name: "name",
-            title: "name",
+            title: "Name",
             type: "string",
             description: "Name of user",
             readOnly: true,
@@ -26,7 +26,7 @@ const user = {
         }),
         defineField({
             name: "image",
-            title: "image",
+            title: "Image",
             type: "url",
         }),
         defineField({
@@ -35,8 +35,18 @@ const user = {
             hidden: true,
         }),
         defineField({
+            name: "email",
+            type: "string",
+            title: "Email",
+        }),
+        defineField({
+            name: "emailVarified",
+            type: "datetime",
+            hidden: true,
+        }),
+        defineField({
             name: "about",
-            title: "about",
+            title: "About",
             type: "text",
             description: "A brief description about user",
         }),
