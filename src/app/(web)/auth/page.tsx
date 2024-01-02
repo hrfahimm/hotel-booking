@@ -76,3 +76,6 @@ export default function Auth() {
         </div>
     </section>;
 }
+
+
+// <button onClick={loginHandler} className=" underline font-semibold flex  gap-2 text-lg"> <span>LogIn</span> <IoArrowRedo className="justify-center items-center text-lg" /></button>
