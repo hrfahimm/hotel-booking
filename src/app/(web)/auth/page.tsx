@@ -1,11 +1,12 @@
 'use client'
 import { signUp } from "next-auth-sanity/client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { signIn, useSession } from 'next-auth/react';
 import toast from "react-hot-toast";
 import { IoArrowRedo } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 const defaultFormData = {
     email: '',
@@ -24,11 +25,16 @@ export default function Auth() {
     };
 
     const { data: session } = useSession();
-    console.log(session);
+    const router = useRouter();
+
+    useEffect(() => {
+        if (session) router.push("/")
+    }, [router, session])
+
     const loginHandler = async () => {
         try {
             await signIn();
-            //push the user to home page
+            router.push("/")
         } catch (error) {
             console.log(error);
             toast.error('something went wrong')
@@ -62,7 +68,7 @@ export default function Auth() {
                 </span>
             </div>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                <input type="email" name="email" value={formData.email} placeholder="Write Yopur Email" required onChange={handleInputChange} className={inputService} />
+                <input type="email" name="email" value={formData.email} placeholder="Write Your Email" required onChange={handleInputChange} className={inputService} />
 
                 <input type="text" name="name" value={formData.name} placeholder="Name"
                     required onChange={handleInputChange} className={inputService} />
@@ -76,6 +82,3 @@ export default function Auth() {
         </div>
     </section>;
 }
-
-
-// <button onClick={loginHandler} className=" underline font-semibold flex  gap-2 text-lg"> <span>LogIn</span> <IoArrowRedo className="justify-center items-center text-lg" /></button>
