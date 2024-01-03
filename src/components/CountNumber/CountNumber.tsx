@@ -23,7 +23,7 @@ const CountNumber: FC<Props> = ({ endValue, duration }) => {
         return () => cancelAnimationFrame(animationFrameId)
     }, [endValue, duration]);
 
-    return <p className="md:font-bold font-medium text-lg xl:text-5xl">{Math.round(count)}</p>
+    return <p className="md:font-bold font-medium text-lg xl:text-5xl   hover:scale-105">{Math.round(count)}</p>
 };
 
 export default CountNumber;

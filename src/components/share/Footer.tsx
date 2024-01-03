@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="mt-16 ">
             <div className="container mx-auto px-4">
-                <Link href='/' className="text-xl font-black text-tertiary-dark ">HOTEL</Link>
+                <Link href='/' className="text-xl font-black text-tertiary-dark anim ">HOTEL</Link>
                 <h4 className="font-semibold text-[40px] py-6">Contact</h4>
                 <div className="flex flex-wrap gap-16 items-center justify-between">
                     <div className="flex-1">
@@ -31,7 +31,7 @@ export default function Footer() {
                         <p className="pb-4 anim">Team of Service</p>
                         <p className="pb-4 anim">Get it Touch</p>
                         <p className="pb-4 anim">Our Privacy Commitement</p>
-                        <p className=" "> Customer Assistent</p>
+                        <p className="anim "> Customer Assistent</p>
                     </div>
                     <div className="flex-1 md:text-right">
                         <p className="pb-4 anim">wellness</p>
