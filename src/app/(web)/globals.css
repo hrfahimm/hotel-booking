@@ -30,3 +30,6 @@ html.dark {
 .font-normal {
     @apply text-sm md:text-base;
 }
+.anim {
+    @apply hover:scale-105 duration-300 transition-all;
+}

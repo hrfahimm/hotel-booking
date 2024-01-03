@@ -14,31 +14,31 @@ export default function Footer() {
                     <div className="flex-1">
                         <p className="">123 Road</p>
                         <div className="flex items-center py-4">
-                            <FaBus />
-                            <p className="ml-2 ">CodeWithlari</p>
+                            <FaBus className="anim" />
+                            <p className="ml-2 anim ">CodeWithlari</p>
                         </div>
                         <div className="flex items-center">
-                            <PiPhoneCallFill />
-                            <p className="ml-2 ">0179999999</p>
+                            <PiPhoneCallFill className="anim" />
+                            <p className="ml-2 anim ">0179999999</p>
                         </div>
                         <div className="flex items-center pt-4">
-                            <BiSolidMessageSquareDetail />
-                            <p className="ml-2 ">WhatsApp</p>
+                            <BiSolidMessageSquareDetail className="anim" />
+                            <p className="ml-2 anim ">WhatsApp</p>
                         </div>
                     </div>
                     <div className="flex-1 md:text-right">
-                        <p className="pb-4">Our Story</p>
-                        <p className="pb-4">Get it Touch</p>
-                        <p className="pb-4">Our Privacy Commitement</p>
-                        <p className="pb-4">Team of Service</p>
+                        <p className="pb-4 anim">Our Story</p>
+                        <p className="pb-4 anim">Team of Service</p>
+                        <p className="pb-4 anim">Get it Touch</p>
+                        <p className="pb-4 anim">Our Privacy Commitement</p>
                         <p className=" "> Customer Assistent</p>
                     </div>
                     <div className="flex-1 md:text-right">
-                        <p className="pb-4">Dining Exprience</p>
-                        <p className="pb-4">wellness</p>
-                        <p className="pb-4">Fitness</p>
-                        <p className="pb-4">Events</p>
-                        <p className="">Sports</p>
+                        <p className="pb-4 anim">wellness</p>
+                        <p className="pb-4 anim">Dining Exprience</p>
+                        <p className="pb-4 anim">Fitness</p>
+                        <p className="pb-4 anim">Events</p>
+                        <p className="anim">Sports</p>
                     </div>
                 </div>
             </div>
