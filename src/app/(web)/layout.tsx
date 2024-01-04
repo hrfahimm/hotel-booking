@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/share/Header'
-import Footer from '@/components/share/Footer'
-import ThemeProvider from '@/components/Theme/ThemeProvider'
-import NextAuthProvider from '@/components/AuthProvider/AuthProvider'
-import Toast from '@/components/Toast/Toast'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import ThemeProvider from '@/Context/ThemeProvider'
+import NextAuthProvider from '@/components/AuthProvider'
+import Toast from '@/libs/Toast'
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '700', '900'], style: ["italic", 'normal'], variable: "--font-poppins" })

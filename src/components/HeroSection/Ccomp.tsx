@@ -3,7 +3,7 @@ type Props = {
     heading1: React.ReactNode;
     section2: React.ReactNode;
 };
-import CountNumber from "../CountNumber/CountNumber";
+import CountNumber from "../CountNumber";
 import { FC } from "react";
 
 const ClientComponent: FC<Props> = props => {

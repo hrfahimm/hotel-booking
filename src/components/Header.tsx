@@ -18,7 +18,7 @@ export default function Header() {
 
     return (
         <header className="py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-center">
-            <div className="flex items-center w-full md:2/3 ">
+            <div className="flex items-center w-full md:2/3 justify-between md:justify-start ">
                 <Link href="/" className="text-3xl font-black text-tertiary-dark ">
                     HOTEL
                 </Link>
