@@ -33,8 +33,10 @@ export default function RootLayout({
             </main>
           </ThemeProvider>
         </NextAuthProvider>
-
       </body>
     </html >
   )
 }
+
+
+

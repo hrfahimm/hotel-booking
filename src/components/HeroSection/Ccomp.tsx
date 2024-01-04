@@ -15,18 +15,18 @@ const ClientComponent: FC<Props> = props => {
                 <div className='flex gap-3 flex-col items-center justify-center'>
                     <p className='text-xs lg:text-xl text-center'>Basic Room</p>
                     {/* <CountUpNumber duration={5000} endValue={50} /> */}
-                    <CountNumber duration={4000} endValue={213} />
+                    <CountNumber duration={2000} endValue={213} />
                 </div>
                 <div className='flex gap-3 flex-col items-center justify-center'>
                     <p className='text-xs lg:text-xl text-center'>Luxury Room</p>
                     {/* <CountUpNumber duration={5000} endValue={120} /> */}
-                    <CountNumber duration={4000} endValue={48} />
+                    <CountNumber duration={2000} endValue={48} />
 
                 </div>
                 <div className='flex gap-3 flex-col items-center justify-center'>
                     <p className='text-xs lg:text-xl text-center'>Suite</p>
                     {/* <CountUpNumber duration={5000} endValue={60} /> */}
-                    <CountNumber duration={4000} endValue={15} />
+                    <CountNumber duration={2000} endValue={15} />
 
                 </div>
             </div>
