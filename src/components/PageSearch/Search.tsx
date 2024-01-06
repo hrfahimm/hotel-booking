@@ -23,8 +23,8 @@ const Search: FC<Props> = ({ setSearchQuary, setRoomTypeFilter, searchQuary, roo
     const handleFilterClick = () => {
         router.push(`/rooms?roomTypes=${roomTypeFilter}&searchQuery=${searchQuary}`)
     }
-    return <section>
-        <div className="bg-tertiary-light px-4 py-6 rounded-lg ">
+    return <section className="">
+        <div className="bg-tertiary-light px-4 py-6 rounded-lg my-6">
             <div className="container mx-auto flex flex- gap-4 flex-wrap justify-between items-center">
                 <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
                     <label htmlFor="" className="block text-sm mb-2 to-black uppercase  font-semibold pl-2">Room Type</label>

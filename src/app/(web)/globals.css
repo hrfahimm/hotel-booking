@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 html {
     --line-color: #e5e7eb;
 }
@@ -19,16 +21,16 @@ html.dark {
     @apply px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-red-600 rounded-lg md:rounded-2xl  shadow-md shadow-black dark:shadow-white text-white font-bold text-base md:text-xl hover:scale-105 duration-300 transition-all;
 }
 .btn-secondary {
-    @apply px-5 md:px-[45px] lg:px-[68px] py-1 md:py-4 bg-white dark:bg-black rounded-lg md:rounded-2xl  shadow-lg shadow-black   text-black dark:text-white font-bold text-base md:text-xl hover:scale-105 duration-300 transition-all;
+    @apply px-4  md:px-[40px] lg:px-[60px] py-1 md:py-3 bg-white dark:bg-black rounded-lg md:rounded-2xl  shadow-lg shadow-black   text-black dark:text-white font-bold text-base md:text-xl hover:scale-105 duration-300 transition-all;
 }
 
 .btn-tertiary {
-    @apply px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-tertiary-light rounded-lg md:rounded-2xl shadow-sm shadow-tertiary-light text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all;
-}
+    @apply px-6 md:px-[50px] lg:px-[72px] py-2 md:py-5 bg-tertiary-light rounded-lg md:rounded-2xl shadow-sm shadow-tertiary-light text-white font-bold text-base md:text-xl hover:scale-110 duration-300 transition-all
+};
 
 .font-heading {
     @apply font-medium md:font-semibold md:text-6xl text-3xl;
-}
+};
 
 .font-normal {
     @apply text-sm md:text-base;

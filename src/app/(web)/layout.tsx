@@ -4,7 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ThemeProvider from '@/Context/ThemeProvider'
-import NextAuthProvider from '@/components/AuthProvider'
+import NextAuthProvider from '@/Context/AuthProvider'
 import Toast from '@/libs/Toast'
 
 
