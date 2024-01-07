@@ -14,7 +14,7 @@ export type Room = {
     description:string;
     dimenstion:string;
     discount:number;
-    images:Image;
+    images:Images;
     isBooked:boolean;
     isFreat
 

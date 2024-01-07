@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import { FaBus } from "react-icons/fa";
+// import { FaBus } from "react-icons/fa";
 
 import { PiPhoneCallFill } from "react-icons/pi";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
+import { FaBus } from "react-icons/fa";
+// import { FaBus } from "react-icons/fa";
 export default function Footer() {
     return (
         <footer className="mt-16 ">
@@ -40,6 +42,7 @@ export default function Footer() {
                         <p className="pb-4 anim">Events</p>
                         <p className="anim">Sports</p>
                     </div>
+                    
                 </div>
             </div>
             <div className="bg-tertiary-light h-10 md:h-[70px] mt-16 w-full bottom-0 left-0 "></div>
