@@ -38,3 +38,5 @@ html.dark {
 .anim {
     @apply hover:scale-105 duration-300 transition-all;
 }
+
+ 

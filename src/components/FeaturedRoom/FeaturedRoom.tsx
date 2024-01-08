@@ -22,10 +22,8 @@ const FeaturedRoom: FC<Props> = (props) => {
                     {
                         featuredRoom.images.splice(1, 2).map(image => (
                             <div className=" rounded-2xl overflow-hidden" key={image._key}>
-
-                                <Image alt="image._key" src={image.url} width={300} height={300}
-                                    className="img scale-animation " />
-
+                                <Image alt="image.name" src={image.url} width={300} height={300}
+                                    className="img scale-animation" />
                             </div>
                         ))
                     }
@@ -63,3 +61,8 @@ const FeaturedRoom: FC<Props> = (props) => {
 };
 
 export default FeaturedRoom;
+
+
+
+// bg - [radial - gradient(ellipse_at_top, _var(--tw - gradient - stops))] from - gray - 700 via - gray - 900 to - black
+//bg-gradient-to-r from-indigo-500 

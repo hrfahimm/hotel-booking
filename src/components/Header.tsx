@@ -13,7 +13,7 @@ export default function Header() {
     const { darkTheme, setDarkTheme } = useContext(ThemeContext);
 
     const { data: session } = useSession();
-    console.log(session);
+    //console.log(session);
 
     return (
         <header className=' py-10 px-4 container mx-auto text-xl  flex flex-wrap md:flex-nowrap items-center justify-center'>
@@ -70,7 +70,7 @@ export default function Header() {
 
             <ul className='flex items-center justify-between w-full md:w-1/3 mt-4 '>
                 <li className='hover:-translate-y-2 hover:font-semibold duration-500 transition-all '>
-                    <Link href='/home'>Home</Link>
+                    <Link href='/'>Home</Link>
                 </li>
                 <li className='hover:-translate-y-2 hover:font-semibold duration-500 transition-all  '>
                     <Link href='/rooms'>Rooms</Link>

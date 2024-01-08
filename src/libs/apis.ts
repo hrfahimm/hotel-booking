@@ -2,14 +2,21 @@ import { Room } from "@/models/room";
 import sanityClient from "./sanity"
 import * as queries from './sanityQueries'
 
-export async function getFeaturedRoom(){
+export async function getFeaturedRoom() {
     const result = await sanityClient.fetch<Room>(
-         queries.getFeaturedRoomQuary,
+        queries.getFeaturedRoomQuery,
         {},
-        {cache:'no-cache'});
+        { cache: 'no-cache' });
     return result;
 }
 
-
+export async function getRooms() {
+    const result = await sanityClient.fetch<Room[]>(
+        queries.getRoomsQuery,
+        {},
+        { cache: 'no-cache' }
+    );
+    return result;
+}
 
 // const result = await sanityClient.fetch(queries.getFeaturedRoomQuery,{},{next:{revalidate:1800}})
