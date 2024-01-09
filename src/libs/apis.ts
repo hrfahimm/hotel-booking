@@ -19,4 +19,17 @@ export async function getRooms() {
     return result;
 }
 
+export async function getRoom(slug: string) {
+    const result = await sanityClient.fetch<Room>(
+        queries.getRoom,
+        { slug },
+        { cache: 'no-cache' }
+    );
+    return result;
+}
+
+
+
+
+
 // const result = await sanityClient.fetch(queries.getFeaturedRoomQuery,{},{next:{revalidate:1800}})

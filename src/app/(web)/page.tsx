@@ -1,5 +1,5 @@
-import Gallery from "@/components/Gallery";
-import NewsLetter from "@/components/NewsLetter";
+import Gallery from "@/components/Gallery/Gallery";
+import NewsLetter from "@/components/NewsLetter/NewsLetter";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import PageSearch from "@/components/PageSearch/PageSearch";
 import FeaturedRoom from "@/components/FeaturedRoom/FeaturedRoom";
