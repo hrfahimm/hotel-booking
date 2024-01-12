@@ -7,7 +7,7 @@ import { MdCancel } from "react-icons/md";
 import { GiCancel } from "react-icons/gi";
 
 
-const HotelPhotoGallary: FC<{ photos: ImageType[] }> = ({ photos }) => {
+const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
     const [currenPhotoIndex, setCurrentPhotoIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
 
@@ -122,4 +122,4 @@ const HotelPhotoGallary: FC<{ photos: ImageType[] }> = ({ photos }) => {
     </div>;
 };
 
-export default HotelPhotoGallary;
+export default HotelPhotoGallery;
