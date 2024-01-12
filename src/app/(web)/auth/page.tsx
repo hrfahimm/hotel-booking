@@ -13,7 +13,8 @@ const defaultFormData = {
     name: '',
     password: '',
 }
-export default function Auth() {
+const Auth = () => {
+
 
     const [formData, setFormData] = useState(defaultFormData);
 
@@ -21,26 +22,25 @@ export default function Auth() {
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value })
+        setFormData({ ...formData, [name]: value });
     };
 
     const { data: session } = useSession();
     const router = useRouter();
 
     useEffect(() => {
-        if (session) router.push("/")
-    }, [router, session])
+        if (session) router.push('/');
+    }, [router, session]);
 
     const loginHandler = async () => {
         try {
             await signIn();
-            router.push("/")
+            router.push('/');
         } catch (error) {
             console.log(error);
-            toast.error('something went wrong')
-
+            toast.error("Something wen't wrong");
         }
-    }
+    };
 
 
 
@@ -82,3 +82,5 @@ export default function Auth() {
         </div>
     </section>;
 }
+
+export default Auth;

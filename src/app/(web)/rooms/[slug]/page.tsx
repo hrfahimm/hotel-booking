@@ -22,6 +22,19 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 
     return <div>
         <HotelPhotoGallary photos={room.images} />
+        <div className="container mt-20 mx-auto">
+            <div className="md:grid md:grid-cols-12 gap-10 px-3">
+                <div className="md:col-span-8 md:w-full">
+                    <div className="">
+                        <h2 className="font-bold  text-left text-lg md:text-2xl">{room.name}</h2>
+                        <h3>{room.dimension}</h3>
+                    </div>
+                </div>
+                <div className="md:col-span-4  rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto">
+                    {/* {room cta} */}
+                </div>
+            </div>
+        </div>
     </div>;
 };
 

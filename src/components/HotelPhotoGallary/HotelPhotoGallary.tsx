@@ -3,6 +3,9 @@ import { Image as ImageType } from "@/models/room";
 import Image from "next/image";
 import React, { FC, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { MdCancel } from "react-icons/md";
+import { GiCancel } from "react-icons/gi";
+
 
 const HotelPhotoGallary: FC<{ photos: ImageType[] }> = ({ photos }) => {
     const [currenPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -13,6 +16,7 @@ const HotelPhotoGallary: FC<{ photos: ImageType[] }> = ({ photos }) => {
         setCurrentPhotoIndex(index);
         setShowModal(true);
     }
+    const closeModal = () => setShowModal(false);
 
     const handlePrevious = () => {
         setCurrentPhotoIndex(prevIndex =>
@@ -89,19 +93,31 @@ const HotelPhotoGallary: FC<{ photos: ImageType[] }> = ({ photos }) => {
                         </div>)
                 }
             </div>
-            {
-                showModal && (
-                    <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]" >
-                        <div className="h-[75bh] w-[320px] md:w-[700px] relative">
-                            <Image src={photos[currenPhotoIndex].url} alt={`room photo${currenPhotoIndex + 1}`}
-                                width={150}
-                                height={150}
-                                className="img"
-                            />
+            {showModal && (
+                <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]'>
+                    <div className='h-[75vh] w-[320px] md:w-[700px] relative'>
+                        <Image
+                            src={photos[currenPhotoIndex].url}
+                            alt={`Room Photo ${currenPhotoIndex + 1}`}
+                            width={150}
+                            height={150}
+                            className='img'
+                        />
+                        <div className='flex justify-between items-center py-3'>
+                            <div className='flex space-x-2 items-center text-white'>
+                                <FaArrowLeft className='cursor-pointer' onClick={handlePrevious} />
+                                <FaArrowRight className='cursor-pointer' onClick={handleNext} />
+                            </div>
+                            <span className='text-white text-sm'>
+                                {currenPhotoIndex + 1} / {photos.length}
+                            </span>
                         </div>
+                        <button className='absolute top-2 right-2 text-white text-lg' onClick={closeModal} >
+                            <GiCancel className='font-medium text-3xl text-tertiary-dark' />
+                        </button>
                     </div>
-                )
-            }
+                </div>
+            )}
         </div>
     </div>;
 };
