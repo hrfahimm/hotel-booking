@@ -12,8 +12,8 @@ import LoadingSpinner from '../../loading';
 import toast from 'react-hot-toast';
 import HotelPhotoGallery from '@/components/HotelPhotoGallary/HotelPhotoGallary';
 import axios from 'axios';
-// import BookRoomCta from '@/components/BookRoomCta/BookRoomCta';
-// import RoomReview from '@/components/RoomReview/RoomReview';
+import BookRoomCta from '@/components/BookRoomCta/BookRoomCta';
+import RoomReview from '@/components/RoomReview/RoomReview';
 
 const RoomDetails = (props: { params: { slug: string } }) => {
     const {
