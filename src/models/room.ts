@@ -16,8 +16,19 @@ export type Slug = {
     _type: string;
     current: string;
 
-}
 
+}
+export type createBookingDto = {
+    user: string;
+    hotelRoom: string;
+    checkinDate: string;
+    checkoutDate: string;
+    numberOfDays: number;
+    adults: number;
+    children: number;
+    totalPrice: number;
+    discount: number;
+};
 export type Room = {
     _id: string;
     coverImage: CoverImage;

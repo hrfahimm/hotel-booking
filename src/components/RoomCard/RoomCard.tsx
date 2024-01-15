@@ -12,7 +12,7 @@ const RoomCard: FC<Props> = (props) => {
     return (
         <div className='rounded-xl w-72 gap-2 mb-10 mx-auto  md:mx-0 overflow-hidden text-black  dark:text-white  '>
             <div className="h-60 overflow-hidden">
-                <Image alt={name} src={coverImage.url} height={250} width={250}
+                <Image placeholder='empty' alt={name} src={coverImage.url} height={250} width={250}
                     className='img scale-animation' />
             </div>
             <div className="p-4    dark:bg-gray-950 bg-gray-100  ">

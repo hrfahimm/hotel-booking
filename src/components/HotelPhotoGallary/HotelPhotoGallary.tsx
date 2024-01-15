@@ -41,6 +41,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                 <div className='h-[540px] relative rounded-2xl overflow-hidden'>
                     <div className='hidden md:flex justify-center items-center w-full h-full'>
                         <Image
+                            placeholder='empty'
                             src={photos[0].url}
                             alt={`Room Photo ${currenPhotoIndex + 1}`}
                             className='img scale-animation cursor-pointer'
@@ -51,6 +52,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                     </div>
                     <div className='md:hidden flex justify-center items-center w-full h-full'>
                         <Image
+                            placeholder='empty'
                             src={photos[currenPhotoIndex].url}
                             alt={`Room Photo ${currenPhotoIndex + 1}`}
                             className='img'
@@ -77,6 +79,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                             className='cursor-pointer h-64 rounded-2xl overflow-hidden'
                         >
                             <Image
+                                placeholder='empty'
                                 width={150}
                                 height={150}
                                 src={photo.url}
@@ -91,6 +94,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                             onClick={openModal.bind(this, maximumVisiblePhotos)}
                         >
                             <Image
+                                placeholder='empty'
                                 width={150}
                                 height={150}
                                 src={photos[maximumVisiblePhotos - 1].url}
@@ -108,6 +112,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                     <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]'>
                         <div className='h-[75vh] w-[320px] md:w-[700px] relative'>
                             <Image
+                                placeholder='empty'
                                 src={photos[currenPhotoIndex].url}
                                 alt={`Room Photo ${currenPhotoIndex + 1}`}
                                 width={150}

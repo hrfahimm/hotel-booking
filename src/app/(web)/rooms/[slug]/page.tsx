@@ -8,7 +8,7 @@ import { GiSmokeBomb } from 'react-icons/gi';
 import { useState } from 'react';
 import { getRoom } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
-// import { getStripe } from '@/libs/stripe';
+import { getStripe } from '@/libs/stripe';
 import toast from 'react-hot-toast';
 import HotelPhotoGallery from '@/components/HotelPhotoGallary/HotelPhotoGallary';
 import axios from 'axios';
@@ -55,7 +55,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
 
         const hotelRoomSlug = room.slug.current;
 
-        // const stripe = await getStripe();
+        const stripe = await getStripe();
 
         try {
             const { data: stripeSession } = await axios.post('/api/stripe', {
@@ -67,15 +67,15 @@ const RoomDetails = (props: { params: { slug: string } }) => {
                 hotelRoomSlug,
             });
 
-            // if (stripe) {
-            //     const result = await stripe.redirectToCheckout({
-            //         sessionId: stripeSession.id,
-            //     });
+            if (stripe) {
+                const result = await stripe.redirectToCheckout({
+                    sessionId: stripeSession.id,
+                });
 
-            //     if (result.error) {
-            //         toast.error('Payment Failed');
-            //     }
-            // }
+                if (result.error) {
+                    toast.error('Payment Failed');
+                }
+            }
         } catch (error) {
             console.log('Error: ', error);
             toast.error('An error occured');
@@ -88,7 +88,6 @@ const RoomDetails = (props: { params: { slug: string } }) => {
         const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
         return noOfDays;
     };
-
     return (
         <div>
             <HotelPhotoGallery photos={room.images} />
@@ -169,23 +168,24 @@ const RoomDetails = (props: { params: { slug: string } }) => {
                             </div>
                         </div>
                     </div>
+                    {/* clsssname:overflow-auto */}
+                    <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit  '>
 
-                    <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto'>
                         <BookRoomCta
                             discount={room.discount}
                             price={room.price}
-                        specialNote={room.specialNote}
-                        checkinDate={checkinDate}
-                        setCheckinDate={setCheckinDate}
-                        checkoutDate={checkoutDate}
-                        setCheckoutDate={setCheckoutDate}
-                        calcMinCheckoutDate={calcMinCheckoutDate}
-                        adults={adults}
-                        noOfChildren={noOfChildren}
-                        setAdults={setAdults}
-                        setNoOfChildren={setNoOfChildren}
-                        isBooked={room.isBooked}
-                        handleBookNowClick={handleBookNowClick}
+                            specialNote={room.specialNote}
+                            checkinDate={checkinDate}
+                            setCheckinDate={setCheckinDate}
+                            checkoutDate={checkoutDate}
+                            setCheckoutDate={setCheckoutDate}
+                            calcMinCheckoutDate={calcMinCheckoutDate}
+                            adults={adults}
+                            noOfChildren={noOfChildren}
+                            setAdults={setAdults}
+                            setNoOfChildren={setNoOfChildren}
+                            isBooked={room.isBooked}
+                            handleBookNowClick={handleBookNowClick}
                         />
                     </div>
                 </div>

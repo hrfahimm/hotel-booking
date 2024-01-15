@@ -7,6 +7,7 @@ const Gallery = () => {
                 <div className='flex w-1/2 flex-wrap'>
                     <div className='w-1/2 p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/1.jpg'
@@ -16,6 +17,7 @@ const Gallery = () => {
                     </div>
                     <div className='w-1/2 p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/11.jpg'
@@ -25,6 +27,7 @@ const Gallery = () => {
                     </div>
                     <div className='w-full p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/3.jpg'
@@ -36,6 +39,7 @@ const Gallery = () => {
                 <div className='flex w-1/2 flex-wrap'>
                     <div className='w-full p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/4.jpg'
@@ -45,6 +49,7 @@ const Gallery = () => {
                     </div>
                     <div className='w-1/2 p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/1.jpg'
@@ -54,6 +59,7 @@ const Gallery = () => {
                     </div>
                     <div className='w-1/2 p-1 md:p-2 h-48 '>
                         <Image
+                            placeholder='empty'
                             alt='gallery'
                             className='img rounded-xl '
                             src='/images/2.jpg'

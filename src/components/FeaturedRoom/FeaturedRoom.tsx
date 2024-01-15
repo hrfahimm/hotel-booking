@@ -15,7 +15,7 @@ const FeaturedRoom: FC<Props> = (props) => {
         <section className="mb-32 flex md:flex-row flex-col px-4   items-center gap-12 container mx-auto ">
             <div className="md:grid gap-8 grid-cols-1 ">
                 <div className="rounded-2xl overflow-hidden h-48 mb-4 md:mb-0">
-                    <Image alt="featuredRoom.name" src={featuredRoom.coverImage.url} width={300} height={300}
+                    <Image alt="featuredRoom.name" placeholder='empty' src={featuredRoom.coverImage.url} width={300} height={300}
                         className="img scale-animation " />
                 </div>
                 <div className="grid grid-cols-2 gap-8 h-48">
