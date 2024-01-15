@@ -171,22 +171,22 @@ const RoomDetails = (props: { params: { slug: string } }) => {
                     </div>
 
                     <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto'>
-                        {/* <BookRoomCta
+                        <BookRoomCta
                             discount={room.discount}
                             price={room.price}
-                            specialNote={room.specialNote}
-                            checkinDate={checkinDate}
-                            setCheckinDate={setCheckinDate}
-                            checkoutDate={checkoutDate}
-                            setCheckoutDate={setCheckoutDate}
-                            calcMinCheckoutDate={calcMinCheckoutDate}
-                            adults={adults}
-                            noOfChildren={noOfChildren}
-                            setAdults={setAdults}
-                            setNoOfChildren={setNoOfChildren}
-                            isBooked={room.isBooked}
-                            handleBookNowClick={handleBookNowClick}
-                        /> */}
+                        specialNote={room.specialNote}
+                        checkinDate={checkinDate}
+                        setCheckinDate={setCheckinDate}
+                        checkoutDate={checkoutDate}
+                        setCheckoutDate={setCheckoutDate}
+                        calcMinCheckoutDate={calcMinCheckoutDate}
+                        adults={adults}
+                        noOfChildren={noOfChildren}
+                        setAdults={setAdults}
+                        setNoOfChildren={setNoOfChildren}
+                        isBooked={room.isBooked}
+                        handleBookNowClick={handleBookNowClick}
+                        />
                     </div>
                 </div>
             </div>
