@@ -43,7 +43,7 @@ export async function POST(req: Request, res: Response) {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-        return new NextResponse('Authentication required', { status: 400 });
+        return new NextResponse('Authentication required', { status: 300 });
     }
 
     const userId = session.user.id;
