@@ -1,3 +1,4 @@
+import { createBooking } from "@/libs/apis";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
@@ -34,12 +35,21 @@ export async function POST(req: Request, res: Response) {
     switch (event.type) {
         case checkout_session_completed:
             const session = event.data.object;
-            console.log('session =>', session);
+            // console.log('session =>', session);
+
+            const {
+                // @ts-ignore
+                metadata: { adults, checkinDate, checkoutDate, children, hotelRoom, numberOfDays, user, discount, totalPrice
+                }
+            } = session;
+
+
+
+            await createBooking({ adults: Number(adults), checkinDate, checkoutDate, children: Number(children), hotelRoom, numberOfDays: Number(numberOfDays), user, discount: Number(discount), totalPrice: Number(totalPrice) });
 
             //create a  booking
 
-            
-
+            // update the booking
 
 
             return NextResponse.json("Booking successful", { status: 200, statusText: 'Booking Successful' })
