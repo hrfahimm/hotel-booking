@@ -62,6 +62,7 @@ export const createBooking = async ({ adults, checkinDate, checkoutDate, childre
 
 // const result = await sanityClient.fetch(queries.getFeaturedRoomQuery,{},{next:{revalidate:1800}})
 
+
 export const updateHotelRoom = async (hotelRoomId: string) => {
     const mutation = {
         mutations: [
