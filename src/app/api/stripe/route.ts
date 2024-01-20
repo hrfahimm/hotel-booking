@@ -1,5 +1,3 @@
-
-
 import Stripe from 'stripe';
 
 import { authOptions } from '@/libs/auth';
@@ -9,7 +7,6 @@ import { getRoom } from '@/libs/apis';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
     apiVersion: '2023-10-16',
-
 });
 
 type RequestData = {
@@ -46,7 +43,7 @@ export async function POST(req: Request, res: Response) {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-        return new NextResponse('Authentication required', { status: 300 });
+        return new NextResponse('Authentication required', { status: 400 });
     }
 
     const userId = session.user.id;

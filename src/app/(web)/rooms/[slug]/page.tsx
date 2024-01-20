@@ -6,14 +6,16 @@ import { LiaFireExtinguisherSolid } from 'react-icons/lia';
 import { AiOutlineMedicineBox } from 'react-icons/ai';
 import { GiSmokeBomb } from 'react-icons/gi';
 import { useState } from 'react';
+import axios from 'axios';
+
 import { getRoom } from '@/libs/apis';
 import LoadingSpinner from '../../loading';
-import { getStripe } from '@/libs/stripe';
-import toast from 'react-hot-toast';
-import HotelPhotoGallery from '@/components/HotelPhotoGallary/HotelPhotoGallary';
-import axios from 'axios';
+
 import BookRoomCta from '@/components/BookRoomCta/BookRoomCta';
+import toast from 'react-hot-toast';
+import { getStripe } from '@/libs/stripe';
 import RoomReview from '@/components/RoomReview/RoomReview';
+import HotelPhotoGallery from '@/components/HotelPhotoGallary/HotelPhotoGallary';
 
 const RoomDetails = (props: { params: { slug: string } }) => {
     const {
@@ -88,6 +90,7 @@ const RoomDetails = (props: { params: { slug: string } }) => {
         const noOfDays = Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
         return noOfDays;
     };
+
     return (
         <div>
             <HotelPhotoGallery photos={room.images} />
@@ -168,9 +171,8 @@ const RoomDetails = (props: { params: { slug: string } }) => {
                             </div>
                         </div>
                     </div>
-                    {/* clsssname:overflow-auto */}
-                    <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit  '>
 
+                    <div className='md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto'>
                         <BookRoomCta
                             discount={room.discount}
                             price={room.price}

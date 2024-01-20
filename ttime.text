@@ -1,1 +1,4 @@
-070649
+070649 
+stripe listen --forward-to localhost:3000/api/webhook --skip-verify
+>stripe trigger checkout.session.completed
+4242424242424242
