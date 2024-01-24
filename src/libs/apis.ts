@@ -3,12 +3,12 @@ import axios from 'axios';
 
 
 import * as queries from './sanityQueries';
-import sanityClient from './sanity';
+import client from './sanity';
 import { Booking, CreateReviewDto, Review, Room, UpdateReviewDto, createBookingDto } from '@/models/room';
 
 
 export async function getFeaturedRoom() {
-    const result = await sanityClient.fetch<Room>(
+    const result = await client.fetch<Room>(
         queries.getFeaturedRoomQuery,
         {},
         { cache: 'no-cache' }
@@ -18,7 +18,7 @@ export async function getFeaturedRoom() {
 }
 
 export async function getRooms() {
-    const result = await sanityClient.fetch<Room[]>(
+    const result = await client.fetch<Room[]>(
         queries.getRoomsQuery,
         {},
         { cache: 'no-cache' }
@@ -27,7 +27,7 @@ export async function getRooms() {
 }
 
 export async function getRoom(slug: string) {
-    const result = await sanityClient.fetch<Room>(
+    const result = await client.fetch<Room>(
         queries.getRoom,
         { slug },
         { cache: 'no-cache' }
@@ -99,7 +99,7 @@ export const updateHotelRoom = async (hotelRoomId: string) => {
 };
 
 export async function getUserBookings(userId: string) {
-    const result = await sanityClient.fetch<Booking[]>(
+    const result = await client.fetch<Booking[]>(
         queries.getUserBookingsQuery,
         {
             userId,
@@ -119,7 +119,7 @@ export async function getUserBookings(userId: string) {
 
 
 export async function getUserData(userId: string) {
-    const result = await sanityClient.fetch(
+    const result = await client.fetch(
         queries.getUserDataQuery,
         { userId },
         { cache: 'no-cache' }
@@ -141,7 +141,7 @@ export async function checkReviewExists(
         hotelRoomId,
     };
 
-    const result = await sanityClient.fetch(query, params);
+    const result = await client.fetch(query, params);
 
     return result ? result : null;
 }
@@ -215,7 +215,7 @@ export const createReview = async ({
 };
 
 export async function getRoomReviews(roomId: string) {
-    const result = await sanityClient.fetch<Review[]>(
+    const result = await client.fetch<Review[]>(
         queries.getRoomReviewsQuery,
         {
             roomId,
