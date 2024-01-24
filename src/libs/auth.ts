@@ -18,12 +18,12 @@ export const authOptions: NextAuthOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID as string,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         }),
-        SanityCredentials(sanityClient as any),
+        SanityCredentials(sanityClient),
     ],
     session: {
         strategy: 'jwt',
     },
-    adapter: SanityAdapter(sanityClient as any),
+    adapter: SanityAdapter(sanityClient),
     debug: process.env.NODE_ENV === 'development',
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
