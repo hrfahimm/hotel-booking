@@ -25,11 +25,11 @@ export default function Header() {
                 <ul className='flex items-center ml-5'>
                     <li className='flex items-center'>
                         {session?.user ? (
-                            <Link href={`/user/${session.user.id}`}>
+                            <Link href={`/users/${session.user.id}`}>
                                 {session.user.image ? (
                                     <div className='w-10 h-10 rounded-full overflow-hidden'>
                                         <Image
-                                            placeholder='empty'
+
                                             src={session.user.image}
                                             alt={session.user.name!}
                                             width={40}
@@ -38,12 +38,12 @@ export default function Header() {
                                         />
                                     </div>
                                 ) : (
-                                    <FaUserCircle className='cursor-pointer ' />
+                                    <FaUserCircle className='cursor-pointer w-10 ' />
                                 )}
                             </Link>
                         ) : (
                             <Link href='/auth' className=''>
-                                <FaUserCircle className='cursor-pointer ' />
+                                <FaUserCircle className='cursor-pointer w-10   ' />
                             </Link>
                         )}
                     </li>
