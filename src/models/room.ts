@@ -65,3 +65,35 @@ export type Booking = {
     totalPrice: number;
     discount: number;
 };
+
+export type User = {
+    _id: string;
+    name: string;
+    email: string;
+    isAdmin: boolean;
+    about: string | null;
+    _createdAt: string;
+    image: string;
+};
+
+
+export type UpdateReviewDto = {
+    reviewId: string;
+    reviewText: string;
+    userRating: number;
+};
+
+export type CreateReviewDto = {
+    hotelRoomId: string;
+    reviewText: string;
+    userRating: number;
+    userId: string;
+};
+
+export type Review = {
+    text: string;
+    user: { name: string };
+    userRating: number;
+    _createdAt: Date;
+    _id: string;
+};
